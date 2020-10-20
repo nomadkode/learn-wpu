@@ -242,7 +242,7 @@ img {
 .semut:hover,
 .orang:hover,
 .active {
-    box-shadow: 0 0 10px 5px limegreen;
+    box-shadow: 0 0 10px 5px red;
 }
 
 .gajah:active,
