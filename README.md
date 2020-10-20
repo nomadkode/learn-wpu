@@ -319,5 +319,11 @@ Manfaat DOM:
         4. node.insertBefore()
         5. parentNode.removeChild()
         6. parentNode.replaceChild()
-    -   DOM Traversal
-    -   Event Handling
+
+-   DOM Event
+    -   Event Handler = Hanya bisa dijalankan perintah terakhir.
+        1. Inline HTML attribute
+        2. Element Method
+           on<event>
+    -   addEventListener() = Dapat dijalankan berkali-kali.
+-   DOM Traversal
