@@ -32,7 +32,8 @@
 -   String Escape Character
     -   \0 = null
     -   \' = '
-    -   \" = " - \\ = \
+    -   \" = "
+    -   \\ = \
     -   \n = new line
     -   \t = tab
     -   \b backspace
@@ -292,16 +293,31 @@ Manfaat DOM:
         1. getElementById() = menghasilkan element.
         2. getElementsByTagName() = menghasilkan HTMLCollection.
         3. getElementsByClassName() = menghasilkan HTMLCollection.
-    -   Seperti memakai selector pada CSS: 4. querySelector() = menghasilkan element. 5. querySelectorAll() = menghasilkan NodeList.
+    -   Seperti memakai selector pada CSS:
+        1. querySelector() = menghasilkan element.
+        2. querySelectorAll() = menghasilkan NodeList.
 
 -   DOM Manipulation
 
     -   Element Manipulation
         1. element.innerHTML = mengubah isi dr element yg diseleksi.
         2. element.style.<property> = mengubah style dr elemen yg diseleksi.
-        3. element.setAttribute() = memanipulasi attribute yg melekat dr element yg diseleksi.
-        4. element.classList = memanipulasi kelas.
-
--   Node Manipulation
--   DOM Traversal
--   Event Handling
+        3. element.getAttribute() = mengetahui isi attribute.
+        4. element.setAttribute() = menambahkan attribute.
+        5. element.removeAttribute() = menghapus attribute.
+        6. element.classList:
+            - add() = menambahkan kelas.
+            - remove() = menghapus kelas.
+            - toggle() = menambahkan kelas jika belum ada, menghapus jika sudah ada.
+            - item() = mengecek kelas dgn index.
+            - contains() = mengecek kelas yg dimaksud.
+            - replace() = mengganti kelas.
+    -   Node Manipulation
+        1. document.createElement()
+        2. document.createTextNode()
+        3. node.appendChild()
+        4. node.insertBefore()
+        5. parentNode.removeChild()
+        6. parentNode.replaceChild()
+    -   DOM Traversal
+    -   Event Handling
