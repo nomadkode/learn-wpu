@@ -327,3 +327,17 @@ Manfaat DOM:
            on<event>
     -   addEventListener() = Dapat dijalankan berkali-kali.
 -   DOM Traversal
+
+    -   parentNode = hasilnya node.
+    -   parentElement = hasilnya element.
+    -   nextSibling = hasilnya node.
+    -   nextElementSibling = hasilnya element.
+    -   previousSibling = hasilnya node.
+    -   previousElementSibling = hasilnya element.
+
+-   Prevent Default
+
+    -   Untuk mencegah aksi default, menggunakan method: event.preventDefault();
+
+-   Event Bubbling
+    -   Ketika event dijalankan akan menjalankan event pada parent sebelum ke child. Menggunakan event.stopPropagate();
