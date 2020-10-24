@@ -248,6 +248,7 @@ let arrAngka = angka.filter(function (y) {
 console.log(arrAngka.join(" , "));
 
 //* Object Literal
+//* contoh 1
 let mahasiswa = {
     namaDepan: "rama",
     namaBelakang: "setia",
@@ -270,7 +271,20 @@ let mahasiswa = {
 console.log(mahasiswa.ipSemester[2]);
 console.log(mahasiswa.ipKumulatif());
 
+//* Contoh 2
+let mhs = {
+    nama: "Rama",
+    energi: 10,
+    makan: function (porsi) {
+        this.energi = this.energi + porsi;
+        console.log(`Halo ${this.nama}, Selamat makan!`);
+    },
+};
+console.log(mhs.makan(2));
+console.log(mhs.energi);
+
 //* Function declaration Object
+//* Contoh 1
 function buatMahasiswa(namaDepan, namaBelakang, umur, alamat) {
     let mahasiswa = {};
     mahasiswa.Namadepan = namaDepan;
@@ -282,7 +296,29 @@ function buatMahasiswa(namaDepan, namaBelakang, umur, alamat) {
 let mahasiswa1 = buatMahasiswa("rama", "setia", "26", "jl. kincir 3");
 console.log(mahasiswa1);
 
+//* Contoh 2
+function Mahasiswa(nama, energi) {
+    let mhs = {};
+    mhs.nama = nama;
+    mhs.energi = energi;
+
+    mhs.makan = function (porsi) {
+        this.energi += porsi;
+        console.log(`Halo ${this.nama}, selamat makan!`);
+    };
+    mhs.main = function (jam) {
+        this.energi -= jam;
+        console.log(`Halo ${this.nama}, selamat bermain!`);
+    };
+    return mhs;
+}
+let rama = Mahasiswa("Ramadyan", 10);
+console.log(rama.makan(3));
+console.log(rama.main(5));
+console.log(rama);
+
 //* Object Constructor
+//* Contoh 1
 function Mahasiswa(namaDepan, namaBelakang, umur, alamat) {
     this.namaDepan = namaDepan;
     this.namaBelakang = namaBelakang;
@@ -291,3 +327,24 @@ function Mahasiswa(namaDepan, namaBelakang, umur, alamat) {
 }
 let mahasiswa2 = new Mahasiswa("diyan", "setia", "20", "jl. kincir 1");
 console.log(mahasiswa2);
+
+//* Contoh 2
+function Mahasiswa(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+
+    this.makan = function (porsi) {
+        this.energi += porsi;
+        console.log(`Halo ${this.nama}, selamat makan!`);
+    };
+    this.main = function (jam) {
+        this.energi -= jam;
+        console.log(`Halo ${this.nama}, selamat bermain!`);
+    };
+}
+let rama = new Mahasiswa("Ramadyan", 10);
+console.log(rama.makan(3));
+console.log(rama.main(5));
+console.log(rama);
+
+//* object.create()

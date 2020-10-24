@@ -53,6 +53,8 @@
     -   tidak menggunakan keyword & reserved word.
     -   variable scope: local & global.
 
+-   VAR, LET & CONST
+
 # REFACTORING: Sebuah proses mengubah kode agar menjadi lebih baik tanpa mengubah fungsionalitasnya.
 
     Alasan:
@@ -169,12 +171,18 @@
 -   Global / Window Scope
     let a = 1;
     console.log(a);
--   Local / Functional Scope
+-   Function Scope
     function tes() {
     let b = 2;
-    console.log(b);
     }
-    tes(); - Block Scope
+    tes();
+    console.log(b);
+-   Block Scope
+    function tes() {
+    let c = 3;
+    console.log(c);
+    }
+    tes();
 
 # RECURSION: Sebuah fungsi yang memanggil dirinya sendiri.
 
@@ -237,7 +245,7 @@ Implementasi:
         key1 : value1,
         key2 : value2  
          }
-    -   Function declaration Object
+    -   Function Declaration Object
         function namaObject (key) {
         deklarasi object = {};
         object.key1 = key1;
@@ -245,7 +253,7 @@ Implementasi:
         return object;
         }
         deklarasi objectBaru = namaObject(value1, value2);
-    -   Object Constructor
+    -   Object Constructor Function
         function NamaObject (key) {
         this.key1 = key1;
         this.key2 = key2;
