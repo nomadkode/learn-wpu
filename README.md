@@ -240,7 +240,7 @@ Implementasi:
            })
 
 -   OBJECT: Kumpulan elemen (value/ variable) yg tiap elemen memiliki key.
-    -   Object Literal
+    -   Object Literal: Tidak efektif untuk object yg banyak.
         let namaObject = {
         key1 : value1,
         key2 : value2  
@@ -260,7 +260,16 @@ Implementasi:
         }
         deklarasi objectBaru = new NamaObject (value1, value2);
         this adalah object global scope.
-    -   object.create
+    -   object.create()
+        function namaObject (key) {
+        deklarasi object = Object.create{};
+        object.key1 = key1;
+        object.key2 = key2;
+        return object;
+        }
+        deklarasi objectBaru = namaObject (value1, value2);
+    -   Prototypal Inheritance
+    -   Prototype in Class Version
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 

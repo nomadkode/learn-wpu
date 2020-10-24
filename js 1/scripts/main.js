@@ -297,27 +297,38 @@ let mahasiswa1 = buatMahasiswa("rama", "setia", "26", "jl. kincir 3");
 console.log(mahasiswa1);
 
 //* Contoh 2
+const methodMhs = {
+    makan: function (porsi) {
+        this.energi += porsi;
+        console.log(`Halo ${this.nama}, selamat makan!`);
+    },
+    main: function (jam) {
+        this.energi -= jam;
+        console.log(`Halo ${this.nama}, selamat bermain!`);
+    },
+    tidur: function (jam) {
+        this.energi += jam * 2;
+        console.log(`Halo ${this.nama}, selamat tidur!`);
+    },
+};
+
 function Mahasiswa(nama, energi) {
     let mhs = {};
     mhs.nama = nama;
     mhs.energi = energi;
-
-    mhs.makan = function (porsi) {
-        this.energi += porsi;
-        console.log(`Halo ${this.nama}, selamat makan!`);
-    };
-    mhs.main = function (jam) {
-        this.energi -= jam;
-        console.log(`Halo ${this.nama}, selamat bermain!`);
-    };
+    mhs.makan = methodMhs.makan;
+    mhs.main = methodMhs.main;
+    mhs.tidur = methodMhs.tidur;
     return mhs;
 }
+
 let rama = Mahasiswa("Ramadyan", 10);
 console.log(rama.makan(3));
 console.log(rama.main(5));
+console.log(rama.tidur(5));
 console.log(rama);
 
-//* Object Constructor
+//* Object Constructor Function (new)
 //* Contoh 1
 function Mahasiswa(namaDepan, namaBelakang, umur, alamat) {
     this.namaDepan = namaDepan;
@@ -329,22 +340,109 @@ let mahasiswa2 = new Mahasiswa("diyan", "setia", "20", "jl. kincir 1");
 console.log(mahasiswa2);
 
 //* Contoh 2
+const methodMhs = {
+    makan: function (porsi) {
+        this.energi += porsi;
+        console.log(`Halo ${this.nama}, selamat makan!`);
+    },
+    main: function (jam) {
+        this.energi -= jam;
+        console.log(`Halo ${this.nama}, selamat bermain!`);
+    },
+    tidur: function (jam) {
+        this.energi += jam * 2;
+        console.log(`Halo ${this.nama}, selamat tidur!`);
+    },
+};
+
 function Mahasiswa(nama, energi) {
     this.nama = nama;
     this.energi = energi;
+    this.makan = methodMhs.makan;
+    this.main = methodMhs.main;
+    this.tidur = methodMhs.tidur;
+}
 
-    this.makan = function (porsi) {
+let rama = new Mahasiswa("Ramadyan", 10);
+console.log(rama.makan(3));
+console.log(rama.main(5));
+console.log(rama.tidur(5));
+console.log(rama);
+
+//* object.create()
+const methodMhs = {
+    makan: function (porsi) {
         this.energi += porsi;
         console.log(`Halo ${this.nama}, selamat makan!`);
-    };
-    this.main = function (jam) {
+    },
+    main: function (jam) {
         this.energi -= jam;
         console.log(`Halo ${this.nama}, selamat bermain!`);
-    };
+    },
+    tidur: function (jam) {
+        this.energi += jam * 2;
+        console.log(`Halo ${this.nama}, selamat tidur!`);
+    },
+};
+
+function Mahasiswa(nama, energi) {
+    let mhs = Object.create(methodMhs);
+    mhs.nama = nama;
+    mhs.energi = energi;
+    return mhs;
+}
+
+let rama = Mahasiswa("Ramadyan", 10);
+console.log(rama.makan(3));
+console.log(rama.main(5));
+console.log(rama.tidur(5));
+console.log(rama);
+
+//* Prototype
+function Mahasiswa(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+}
+Mahasiswa.prototype.makan = function (porsi) {
+    this.energi += porsi;
+    return `Halo ${this.nama}, selamat makan!`;
+};
+Mahasiswa.prototype.main = function (jam) {
+    this.energi -= jam;
+    return `Halo ${this.nama}, selamat bermain!`;
+};
+Mahasiswa.prototype.tidur = function (jam) {
+    this.energi += jam * 2;
+    return `Halo ${this.nama}, selamat tidur!`;
+};
+
+let rama = new Mahasiswa("Ramadyan", 10);
+console.log(rama.makan(3));
+console.log(rama.main(5));
+console.log(rama.tidur(5));
+console.log(rama.energi);
+
+//* Class Version
+class Mahasiswa {
+    constructor(nama, energi) {
+        this.nama = nama;
+        this.energi = energi;
+    }
+    makan(porsi) {
+        this.energi += porsi;
+        return `Halo ${this.nama}, selamat makan!`;
+    }
+    main(jam) {
+        this.energi -= jam;
+        return `Halo ${this.nama}, selamat bermain!`;
+    }
+    tidur(jam) {
+        this.energi += jam;
+        return `Halo ${this.nama}, selamat tidur!`;
+    }
 }
 let rama = new Mahasiswa("Ramadyan", 10);
 console.log(rama.makan(3));
 console.log(rama.main(5));
-console.log(rama);
-
-//* object.create()
+console.log(rama.tidur(5));
+console.log(rama.energi);
