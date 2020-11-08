@@ -270,7 +270,23 @@ Implementasi:
     }
     deklarasi objectBaru = namaObject (value1, value2);
   - Prototypal Inheritance
+    function NamaObject (param1, param2) {
+    this.property1 = param1;
+    this.property2 = param2;
+    }
+    NamaObject.prototype.method1 = function1;
+    NamaObject.prototype.method2 = function2;
+    NamaObject.prototype.method3 = function3;
   - Prototype in Class Version
+    class NamaKelas {
+    constructor(param1, param2) {
+    this.property1 = param1;
+    this.property2 = param2;
+    }
+    method1;
+    method2;
+    method3;
+    }
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 

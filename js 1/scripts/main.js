@@ -369,7 +369,7 @@ console.log(rama.main(5));
 console.log(rama.tidur(5));
 console.log(rama);
 
-//* object.create()
+//* Object.create()
 const methodMhs = {
   makan: function (porsi) {
     this.energi += porsi;
@@ -400,8 +400,10 @@ console.log(rama);
 
 //* Prototype
 function Mahasiswa(nama, energi) {
+  // let this = Object.create(Mahasiswa.prototype); dibelakang layar
   this.nama = nama;
   this.energi = energi;
+  // return this; dibelakang layar
 }
 Mahasiswa.prototype.makan = function (porsi) {
   this.energi += porsi;
