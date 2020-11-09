@@ -497,7 +497,38 @@ console.log(add());
 console.log(add());
 
 //* Arrow Function
-const tampilNama = (nama, waktu) => {
-  return `selamat ${waktu}, ${nama}`;
-};
+//* Contoh 1
+const haloDunia = () => 'Hello World';
+console.log(haloDunia());
+//* Contoh 2
+const tampilNama = (nama, waktu) => `selamat ${waktu}, ${nama}`;
 console.log(tampilNama('Rama', 'Pagi'));
+//* Contoh 3
+let maha = ['Rama', 'Dyan', 'Setia', 'Awan'];
+
+let jumlahHuruf = maha.map((nama) => nama.length);
+console.log(jumlahHuruf);
+
+//* Contoh 4
+let jumlahHurufnya = maha.map((nama) => ({
+  nama: nama,
+  jmlHuruf: nama.length,
+}));
+console.table(jumlahHurufnya);
+
+//* This Arrow Function
+//* Contoh 1
+const Mahasiswa = function () {
+  this.nama = 'Rama';
+  this.umur = 20;
+  this.sayHello = () => {
+    console.log(`Halo nama saya ${this.nama}, dan saya ${this.umur} tahun.`);
+  };
+
+  setInterval(() => {
+    console.log(this.umur++); //* closure
+  }, 500);
+};
+const ramadyan = new Mahasiswa();
+
+//* Contoh 2

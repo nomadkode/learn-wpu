@@ -158,7 +158,7 @@
 
   - Harus didefinisikan terlebih dahulu sebelum dipanggil
   - Lebih powerful (Closure, argumen u/ function lain, IIFE)
-    function identifier opt (ParameterList opt) {function body}
+    declaration identifier = function (ParameterList opt) {function body}
     contoh:
     let jumlahDuaBilangan = function (a, b) {
     let total;
@@ -308,12 +308,10 @@ Implementasi:
 
 - Bentuk lain yang lebih ringkas dari function expression.
   contoh:
-  declaration identifier opt = (ParameterList opt) => {function body}
+  declaration identifier = (ParameterList opt) => {function body}
   contoh:
-  let jumlahDuaBilangan = (a, b) => {
-  let total = a + b;
-  return total;
-  }
+  let jumlahDuaBilangan = (param1, param2) => {function body}; // Implicit Return
+- This dalam arrow function
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
