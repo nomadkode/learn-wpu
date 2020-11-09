@@ -288,6 +288,22 @@ Implementasi:
     method3;
     }
 
+# CONTEXT
+
+1.  Creation Phase pada global scope
+    nama var = undefined
+    nama function = fn() yaitu fungsinya itu sendiri.
+    - Hoisting
+      window = global object
+      this = window
+2.  Execution Phase
+    function membuat local execution context
+
+# CLOSURES
+
+- merupakan kombinasi antara function dan lexical scope di dalam function tsb.
+- sebuah function ketika memiliki akses ke parent scope, meskipun parent scope nya sudah selesai dieksekusi.
+
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
 Manfaat DOM:

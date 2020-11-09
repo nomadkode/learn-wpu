@@ -448,3 +448,39 @@ console.log(rama.makan(3));
 console.log(rama.main(5));
 console.log(rama.tidur(5));
 console.log(rama.energi);
+
+//* Closures
+//* Lexical Scope
+function init() {
+  let nama = 'Rama'; // local variable
+  function tampilNama() {
+    // inner function (closure)
+    console.log(nama); // akses ke parent variable
+  }
+  tampilNama();
+}
+init();
+
+//* Function
+//* Contoh 1
+function init() {
+  return function (nama) {
+    console.log(nama);
+  };
+}
+let panggilNama = init();
+panggilNama('Rama');
+panggilNama('Dyan');
+
+//* Contoh 2
+function ucapkanSalam(waktu) {
+  return function (nama) {
+    console.log(`Halo ${nama} selamat ${waktu}, semoga harimu menyenangkan!`);
+  };
+}
+let selamatPagi = ucapkanSalam('pagi');
+let selamatSiang = ucapkanSalam('siang');
+let selamatMalam = ucapkanSalam('malam');
+
+selamatPagi('Rama');
+selamatMalam('Dyan');
