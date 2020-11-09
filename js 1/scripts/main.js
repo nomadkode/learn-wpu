@@ -461,7 +461,7 @@ function init() {
 }
 init();
 
-//* Function
+//* Factory Function
 //* Contoh 1
 function init() {
   return function (nama) {
@@ -495,3 +495,9 @@ let add = (function () {
 console.log(add());
 console.log(add());
 console.log(add());
+
+//* Arrow Function
+const tampilNama = (nama, waktu) => {
+  return `selamat ${waktu}, ${nama}`;
+};
+console.log(tampilNama('Rama', 'Pagi'));

@@ -304,6 +304,17 @@ Implementasi:
 - merupakan kombinasi antara function dan lexical scope di dalam function tsb.
 - sebuah function ketika memiliki akses ke parent scope, meskipun parent scope nya sudah selesai dieksekusi.
 
+# ARROW FUNCTION
+
+- Bentuk lain yang lebih ringkas dari function expression.
+  contoh:
+  declaration identifier opt = (ParameterList opt) => {function body}
+  contoh:
+  let jumlahDuaBilangan = (a, b) => {
+  let total = a + b;
+  return total;
+  }
+
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
 Manfaat DOM:
