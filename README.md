@@ -303,6 +303,13 @@ Implementasi:
 
 - merupakan kombinasi antara function dan lexical scope di dalam function tsb.
 - sebuah function ketika memiliki akses ke parent scope, meskipun parent scope nya sudah selesai dieksekusi.
+  contoh:
+  function namaFunction(param1) {
+  return namaLocalFunction(param2) {
+  function body}
+  }
+  declaration namaVariable = namaFunction(argument1);
+  namaVariable(argument2);
 
 # ARROW FUNCTION
 

@@ -455,16 +455,17 @@ function init() {
   let nama = 'Rama'; // local variable
   function tampilNama() {
     // inner function (closure)
-    console.log(nama); // akses ke parent variable
+    console.log(nama); // akses ke parent  / lexical scope
   }
   tampilNama();
 }
 init();
 
-//* Factory Function
+//* Function Factory
 //* Contoh 1
 function init() {
   return function (nama) {
+    //anonymous function
     console.log(nama);
   };
 }
@@ -500,18 +501,22 @@ console.log(add());
 //* Contoh 1
 const haloDunia = () => 'Hello World';
 console.log(haloDunia());
-//* Contoh 2
+
+//* Contoh 2 function expression vs arrow function
+// const tampilNama = function (nama, waktu) {
+//   return `selamat ${waktu}, ${nama}.`;
+// };
 const tampilNama = (nama, waktu) => `selamat ${waktu}, ${nama}`;
 console.log(tampilNama('Rama', 'Pagi'));
+
 //* Contoh 3
 let maha = ['Rama', 'Dyan', 'Setia', 'Awan'];
-
 let jumlahHuruf = maha.map((nama) => nama.length);
 console.log(jumlahHuruf);
 
 //* Contoh 4
 let jumlahHurufnya = maha.map((nama) => ({
-  nama: nama,
+  nama,
   jmlHuruf: nama.length,
 }));
 console.table(jumlahHurufnya);
@@ -526,9 +531,22 @@ const Mahasiswa = function () {
   };
 
   setInterval(() => {
-    console.log(this.umur++); //* closure
+    console.log(this.umur++);
   }, 500);
 };
 const ramadyan = new Mahasiswa();
 
-//* Contoh 2
+//* Contoh 2 arrow function pada DOM
+const box = document.querySelector('box');
+box.addEventListener('click', function () {
+  let satu = 'size';
+  let dua = 'caption';
+
+  if (this.classList.contains(satu)) {
+    [satu, dua] = [dua, satu];
+  }
+  this.classList.toggle(satu);
+  setTimeout(() => {
+    this.classList.toggle(dua);
+  }, 600);
+});
