@@ -550,3 +550,53 @@ box.addEventListener('click', function () {
     this.classList.toggle(dua);
   }, 600);
 });
+
+//* Higher Order Function
+//* Contoh 1
+let total = 0,
+  count = 1;
+while (count <= 10) {
+  total += count;
+  count++;
+}
+console.log(total);
+
+//* Contoh 2
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+function repeatLog(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(i);
+  }
+}
+repeatLog(1);
+repeatLog(10);
+repeatLog(100);
+
+//* Contoh 3
+const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+// For
+// const newAngka = [];
+// for (let i = 0; i < angka.length; i++) {
+//   if (angka[i] >= 3) {
+//     newAngka.push(angka[i]);
+//   }
+// }
+// console.log(newAngka);
+//* Filter
+const newAngka1 = angka.filter((a) => a >= 3);
+console.log(newAngka1);
+
+//* Map
+const newAngka2 = angka.map((a) => a * 2);
+console.log(newAngka2);
+
+//* Reduce
+const newAngka3 = angka.reduce(
+  (accumulator, currentValue) => accumulator + currentValue
+);
+console.log(newAngka3);
+
+//* Method Chaining

@@ -319,6 +319,22 @@ Implementasi:
   contoh:
   let jumlahDuaBilangan = (param1, param2) => {function body}; // Implicit Return
 - This dalam arrow function
+  arrow function tidak bisa diterapkan pada this.
+  contoh:
+  declaration NamaObject = function (param1) {
+  this.property1 = string;
+  this.property2 = () => {function body};
+  }
+  declaration namaVariable = new NamaObject();
+
+# Higher Order Function
+
+Function yg beroperasi pada function lain (di dalam argument / return value). Javascript memperlakukan function sbg object.
+Why: Abstraksi, yaitu untuk menyederhanakan suatu program karena semakin besar sebuah program, semakin tinggi kompleksitasnya, semakin membingungkan programmer.
+
+- Array.prototype.map()
+- Array.prototype.filter()
+- Array.prototype.reduce()
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
