@@ -585,6 +585,7 @@ const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 //   }
 // }
 // console.log(newAngka);
+console.log(angka);
 //* Filter
 const newAngka1 = angka.filter((a) => a >= 3);
 console.log(newAngka1);
@@ -595,8 +596,15 @@ console.log(newAngka2);
 
 //* Reduce
 const newAngka3 = angka.reduce(
-  (accumulator, currentValue) => accumulator + currentValue
+  (accumulator, currentValue) => accumulator + currentValue //* , nilaiAwal opt
 );
 console.log(newAngka3);
 
 //* Method Chaining
+const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+const hasil = angka
+  .filter((a) => a > 5)
+  .map((a) => a * 3)
+  .reduce((acc, curr) => acc + curr);
+console.log(hasil);
