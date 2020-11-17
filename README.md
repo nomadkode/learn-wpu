@@ -336,6 +336,23 @@ Why: Abstraksi, yaitu untuk menyederhanakan suatu program karena semakin besar s
 - Array.prototype.filter()
 - Array.prototype.reduce()
 
+# Template Literal
+
+adalah string literal yg memungkinkan adanya expression di dalamnya.
+bisa menggunakan: ' '; " "; dan ` `;
+
+Dengan backtick(` `) bisa membuat:
+
+- Singleline String: `string text`
+- Multiline string:
+  `string text 1 string text 2 string text 3`
+- Embedded Expression:
+  `string text ${expression} string text`
+- Tagged Template:
+  tag `string text ${expression} string text`
+- HTML Fragments
+- Expression Interpolation
+
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
 Manfaat DOM:

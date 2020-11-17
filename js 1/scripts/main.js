@@ -608,3 +608,26 @@ const hasil = angka
   .map((a) => a * 3)
   .reduce((acc, curr) => acc + curr);
 console.log(hasil);
+
+//* Template Literal
+//* HTML Fragments
+const mhs = {
+  nama: 'Rama',
+  umur: 20,
+  nrp: '12345678',
+  email: 'ramset@gmail.com',
+};
+let el = `<div class="mhs">
+  <h2>${mhs.nama}</h2>
+  <span class="nrp>${mhs.nrp}</span>
+</div>`;
+console.log(el);
+
+//* Expression Interpolation
+let a = 10;
+let b = 15;
+console.log(
+  `Jika a = 10 dan b = 15, maka hasil penjumlahannya adalah: ${a + b}, bukan ${
+    2 * a + b
+  }.`
+);
