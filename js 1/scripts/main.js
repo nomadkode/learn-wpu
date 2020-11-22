@@ -704,3 +704,37 @@ console.log(
 //* Contoh 2
 const x = 10;
 console.log(`${x % 2 == 0 ? 'genap' : 'ganjil'}`);
+
+//* Tagged Template
+//* Contoh 1
+const nama = 'Rama';
+const umur = 20;
+function coba(strings, ...values) {
+  // let result = '';
+  // strings.forEach((str, i) => {
+  //   result += `${str}${values[i] || ''}`;
+  // });
+  // return result;
+  return strings.reduce(
+    (result, str, i) => `${result}${str}${values[i] || ''}`,
+    ''
+  );
+}
+const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun.`;
+// console.log(str);
+document.body.innerHTML = str;
+
+//* Contoh 2
+const nama = 'Rama';
+const umur = 20;
+const email = 'rama@ramset.co.id';
+function highlight(strings, ...values) {
+  return strings.reduce(
+    (result, str, i) =>
+      `${result}${str} <span class="hl">${values[i] || ''}</span>`,
+    ''
+  );
+}
+const str = highlight`Halo, nama saya ${nama}, saya ${umur} tahun, dan email saya adalah : ${email}.`;
+// console.log(str);
+document.body.innerHTML = str;

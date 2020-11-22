@@ -348,10 +348,12 @@ Dengan backtick(` `) bisa membuat:
   `string text 1 string text 2 string text 3`
 - Embedded Expression:
   `string text ${expression} string text`
-- Tagged Template:
-  tag `string text ${expression} string text`
 - HTML Fragments
 - Expression Interpolation
+- Tagged Template:
+  - Escaping HTML Tags
+  - Translation & Internationalization
+  - Styled Components
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
