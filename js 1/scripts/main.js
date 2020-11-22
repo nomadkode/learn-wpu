@@ -41,6 +41,7 @@ for (let nilaiAwal = 1; nilaiAwal <= 10; nilaiAwal++) {
   console.log(`hello world ${nilaiAwal} x`);
 }
 
+// * Selection
 // * if
 let angka = 3;
 if (angka <= 5) {
@@ -152,10 +153,10 @@ let coba = tambah(1, 2, 3, 4);
 console.log(coba);
 
 //* Scope
-let a = 1; //* Global Scope
+let a = 1; // Global Scope
 
 function tes() {
-  let b = 2; //* Function Scope
+  let b = 2; // Function Scope
   console.log(b);
   console.log(a);
 }
@@ -163,7 +164,7 @@ tes();
 
 //* Recursion
 function angka(n) {
-  if (n === 0) return; //* Base Case
+  if (n === 0) return; // Base Case
   console.log(n);
   angka(n - 1);
 }
@@ -454,7 +455,7 @@ console.log(rama.energi);
 function init() {
   let nama = 'Rama'; // local variable
   function tampilNama() {
-    // inner function (closure)
+    /* inner function (closure) */
     console.log(nama); // akses ke parent  / lexical scope
   }
   tampilNama();
@@ -465,7 +466,7 @@ init();
 //* Contoh 1
 function init() {
   return function (nama) {
-    //anonymous function
+    /*anonymous function */
     console.log(nama);
   };
 }
@@ -610,20 +611,89 @@ const hasil = angka
 console.log(hasil);
 
 //* Template Literal
+
 //* HTML Fragments
+//* Contoh 1
 const mhs = {
   nama: 'Rama',
   umur: 20,
   nrp: '12345678',
   email: 'ramset@gmail.com',
 };
-let el = `<div class="mhs">
+const el = `<div class="mhs">
   <h2>${mhs.nama}</h2>
   <span class="nrp>${mhs.nrp}</span>
 </div>`;
 console.log(el);
 
+//* Contoh 2 Looping
+const mhs = [
+  {
+    nama: 'Rama',
+    email: 'rama@ramset.co.id',
+  },
+  {
+    nama: 'Diyan',
+    email: 'diyan@ramset.co.id',
+  },
+  {
+    nama: 'Setia',
+    email: 'setia@ramset.co.id',
+  },
+];
+const el = `<div class="mhs">
+  ${mhs
+    .map(
+      (m) => `<ul>
+    <li>${m.nama}</li>
+    <li>${m.email}</li>
+  </ul>`
+    )
+    .join('')}
+</div>`;
+// console.log(el);
+document.body.innerHTML = el;
+
+//* Contoh 3 Conditional
+const lagu = {
+  judul: 'Kau Adalah',
+  penyanyi: 'Isyana Sarasvati',
+  feat: 'Rayi Putra',
+};
+const el = `<div class="lagu">
+  <ul>
+  <li>${lagu.penyanyi}</li>
+  <li>${lagu.judul} ${lagu.feat ? `(feat. ${lagu.feat})` : ''}</li>
+  </ul>
+</div>`;
+// console.log(el);
+document.body.innerHTML = el;
+
+//* Contoh 4 Nested
+const mhs = {
+  nama: 'Rama',
+  semester: 5,
+  mataKuliah: ['RPL', 'TKJ', 'IT', 'Web'],
+};
+function cetakMataKuliah(mataKuliah) {
+  return `
+  <ol>
+    ${mataKuliah.map((mk) => `<li>${mk}</li>`).join('')}
+  </ol>
+  `;
+}
+
+const el = `<div class="mhs">
+  <h2>${mhs.nama}</h2>
+  <span class="semester">Semester: ${mhs.semester}</span>
+  <h4>Mata Kuliah</h4>
+  ${cetakMataKuliah(mhs.mataKuliah)}
+</div>`;
+// console.log(el);
+document.body.innerHTML = el;
+
 //* Expression Interpolation
+//* Contoh 1
 let a = 10;
 let b = 15;
 console.log(
@@ -631,3 +701,6 @@ console.log(
     2 * a + b
   }.`
 );
+//* Contoh 2
+const x = 10;
+console.log(`${x % 2 == 0 ? 'genap' : 'ganjil'}`);
