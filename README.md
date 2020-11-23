@@ -206,7 +206,7 @@ Implementasi:
   - Manajemen memori
     contoh: let hari = ["senin", "selasa", "rabu", 1 ];
 
-  Array Manipulation
+- Array Manipulation
 
   - Jumlah elemen: length
   - Menggabungkan: join
@@ -327,7 +327,7 @@ Implementasi:
   }
   declaration namaVariable = new NamaObject();
 
-# Higher Order Function
+# HIGHER ORDER FUNCTION
 
 Function yg beroperasi pada function lain (di dalam argument / return value). Javascript memperlakukan function sbg object.
 Why: Abstraksi, yaitu untuk menyederhanakan suatu program karena semakin besar sebuah program, semakin tinggi kompleksitasnya, semakin membingungkan programmer.
@@ -336,7 +336,7 @@ Why: Abstraksi, yaitu untuk menyederhanakan suatu program karena semakin besar s
 - Array.prototype.filter()
 - Array.prototype.reduce()
 
-# Template Literal
+# TEMPLATE LITERAL
 
 adalah string literal yg memungkinkan adanya expression di dalamnya.
 bisa menggunakan: ' '; " "; dan ` `;
