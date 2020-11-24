@@ -351,9 +351,13 @@ Dengan backtick(` `) bisa membuat:
 - HTML Fragments
 - Expression Interpolation
 - Tagged Template:
-  - Escaping HTML Tags
-  - Translation & Internationalization
+  - Escaping / Sanitize HTML Tags
+  - Translation & Internationalization (i18n)
   - Styled Components
+
+# Destructuring Assignments
+
+Expression pada JS yg membuat kita dapat membongkar nilai dr array / properti dr object kedalam variabel terpisah.
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 

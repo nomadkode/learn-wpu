@@ -709,7 +709,7 @@ console.log(`${x % 2 == 0 ? 'genap' : 'ganjil'}`);
 //* Contoh 1
 const nama = 'Rama';
 const umur = 20;
-function coba(strings, ...values) {
+function coba(strings, ...values) /* ... itu rest parameter */ {
   // let result = '';
   // strings.forEach((str, i) => {
   //   result += `${str}${values[i] || ''}`;
@@ -738,3 +738,78 @@ function highlight(strings, ...values) {
 const str = highlight`Halo, nama saya ${nama}, saya ${umur} tahun, dan email saya adalah : ${email}.`;
 // console.log(str);
 document.body.innerHTML = str;
+
+//* Destructuring Assignments
+//* Array Contoh 1
+const coba = ['satu', 'dua', 'tiga'];
+const [a, b, c] = coba;
+console.log(a, b, c);
+//* Array Contoh 2 skip
+const perkenalan = ['Halo', 'nama', 'saya', 'Ramadyan'];
+const [nol, , , tiga] = perkenalan;
+console.log(nol);
+console.log(tiga);
+//* Array Contoh 3 swap
+let a = 1;
+let b = 2;
+[a, b] = [b, a];
+console.log(a, b);
+//* Array Contoh 4 return value
+function coba() {
+  return [1, 2];
+}
+const [a, b] = coba();
+console.log(a, b);
+//* Array Contoh 5 rest parameter
+const [a, ...values] = [1, 2, 3, 4, 5];
+console.log(a, values);
+
+//* Object contoh 1
+const mhs = {
+  nama: 'Ramadyan',
+  umur: 25,
+  email: 'Rama@ramset.co.id',
+};
+const { nama, umur, email } = mhs;
+console.log(nama, umur, email);
+//* Object contoh 2 Assignment tanpa deklarasi
+({ nama, umur, email } = {
+  nama: 'Ramadyan',
+  umur: 25,
+  email: 'Rama@ramset.co.id',
+});
+console.log(nama, umur, email);
+//* Object contoh 3 Assign ke variable baru
+const mhs = {
+  nama: 'Ramadyan',
+  umur: 25,
+  email: 'Rama@ramset.co.id',
+};
+const { nama: n, umur: u, email: e } = mhs;
+console.log(n, u, e);
+//* Object contoh 4 Default Value
+const mhs = {
+  nama: 'Ramadyan',
+  umur: 25,
+};
+const { nama, umur, email = 'Rama@ramset.co.id' } = mhs;
+console.log(email);
+//* Object contoh 5 rest parameter
+const mhs = {
+  nama: 'Ramadyan',
+  umur: 25,
+  email: 'Rama@ramset.co.id',
+};
+const { nama, ...values } = mhs;
+console.log(nama, values);
+//* Object contoh 6 field pada object, setelah dikirim sbg parameter u/ function
+const mhs = {
+  id: 123,
+  nama: 'Ramadyan',
+  umur: 25,
+  email: 'Rama@ramset.co.id',
+};
+function getIdMhs({ id }) {
+  return id;
+}
+console.log(getIdMhs(mhs));
