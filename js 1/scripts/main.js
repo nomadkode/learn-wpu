@@ -869,8 +869,7 @@ function getIdMhs({ id, nama }) {
 }
 console.log(getIdMhs(mhs));
 
-//* Destructuring Function
-//* Contoh 1 return value
+//* Function Contoh 1 return value
 function kalkulasi(a, b) {
   return {
     tambah: a + b,
@@ -882,7 +881,7 @@ function kalkulasi(a, b) {
 const { kurang, bagi, kali, tambah } = kalkulasi(2, 3);
 console.log(tambah, kurang, kali, bagi);
 
-//* Contoh 2 arguments
+//* Function Contoh 2 arguments
 const mhs1 = {
   nama: 'Rama',
   umur: 30,

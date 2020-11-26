@@ -382,8 +382,11 @@ Expression pada JS yg membuat kita dapat membongkar nilai dr array / properti dr
   email: 'Rama@ramset.co.id',
   };
   const {nama, umur, email} = mhs;
+- Function
+  - Pada Return Value
+  - Pada Arguments
 
-# Destructuring Function
+# Spread Operator
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
