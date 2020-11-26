@@ -86,8 +86,21 @@
       for(nilai awal; kondisi terminasi; increment/ decrement) {
       aksi;
       }
-  3.  for in
-  4.  for of
+  3.  for of (string, array, arguments, typedArray, map, set, user-defined iterables)
+      const nama = 'Rama';
+      for (const n of nama) {
+      console.log(n);
+      }
+  4.  for in (enumerable / property dr object)
+      const mhs = {
+      nama: 'Rama',
+      umur: 29,
+      email: 'Rama@Ramset.co.id',
+      };
+      for (m in mhs) {
+      console.log(mhs[m]);
+      }
+
   5.  do while
 
 - Pengkondisian (SELECTION)
@@ -358,6 +371,19 @@ Dengan backtick(` `) bisa membuat:
 # Destructuring Assignments
 
 Expression pada JS yg membuat kita dapat membongkar nilai dr array / properti dr object kedalam variabel terpisah.
+
+- Array
+  const coba = ['satu', 'dua', 'tiga'];
+  const [a, b, c] = coba;
+- Object
+  const mhs = {
+  nama: 'Ramadyan',
+  umur: 25,
+  email: 'Rama@ramset.co.id',
+  };
+  const {nama, umur, email} = mhs;
+
+# Destructuring Function
 
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 

@@ -41,6 +41,61 @@ for (let nilaiAwal = 1; nilaiAwal <= 10; nilaiAwal++) {
   console.log(`hello world ${nilaiAwal} x`);
 }
 
+// * for of
+//* Contoh 1 Array
+const mhs = ['Rama', 'Diyan', 'Setia', 'Awan'];
+// for (let i = 0; i < mhs.length; i++) {
+//   console.log(mhs[i]);
+// }
+// mhs.forEach((m) => console.log(m));
+// mhs.map((m) => console.log(m));
+for (const m of mhs) {
+  console.log(m);
+}
+
+//* Contoh 2 String
+const nama = 'Rama';
+for (const n of nama) {
+  console.log(n);
+}
+
+//* Contoh 3 Swap for of dgn forEach
+const mhs = ['Rama', 'Diyan', 'Setia', 'Awan'];
+// mhs.forEach((m, i) => {
+//   console.log(`${m} adalah mahasiswa ke-${i + 1}`);
+// });
+for (const [i, m] of mhs.entries()) {
+  console.log(`${m} adalah mahasiswa ke-${i + 1}`);
+}
+
+//* Contoh 4 Nodelist
+const liNama = document.querySelectorAll('nama');
+// liNama.forEach((n) => console.log(n.textContent));
+for (n of liNama) {
+  console.log(n.innerHTML);
+}
+
+//* Contoh 5 Arguments
+function jumlahAngka() {
+  let jumlah = 0;
+  for (a of arguments) {
+    jumlah += a;
+  }
+  return jumlah;
+}
+console.log(jumlahAngka(1, 2, 3, 4, 5));
+
+// * for in
+//* Contoh 1
+const mhs = {
+  nama: 'Rama',
+  umur: 29,
+  email: 'Rama@Ramset.co.id',
+};
+for (m in mhs) {
+  console.log(mhs[m]);
+}
+
 // * Selection
 // * if
 let angka = 3;
@@ -744,7 +799,7 @@ document.body.innerHTML = str;
 const coba = ['satu', 'dua', 'tiga'];
 const [a, b, c] = coba;
 console.log(a, b, c);
-//* Array Contoh 2 skip
+//* Array Contoh 2 skipping
 const perkenalan = ['Halo', 'nama', 'saya', 'Ramadyan'];
 const [nol, , , tiga] = perkenalan;
 console.log(nol);
@@ -785,8 +840,8 @@ const mhs = {
   umur: 25,
   email: 'Rama@ramset.co.id',
 };
-const { nama: n, umur: u, email: e } = mhs;
-console.log(n, u, e);
+const { nama: nm, umur: um, email: em } = mhs;
+console.log(nm, um, em);
 //* Object contoh 4 Default Value
 const mhs = {
   nama: 'Ramadyan',
@@ -809,7 +864,36 @@ const mhs = {
   umur: 25,
   email: 'Rama@ramset.co.id',
 };
-function getIdMhs({ id }) {
-  return id;
+function getIdMhs({ id, nama }) {
+  return id + nama;
 }
 console.log(getIdMhs(mhs));
+
+//* Destructuring Function
+//* Contoh 1 return value
+function kalkulasi(a, b) {
+  return {
+    tambah: a + b,
+    kurang: a - b,
+    kali: a * b,
+    bagi: a / b,
+  };
+}
+const { kurang, bagi, kali, tambah } = kalkulasi(2, 3);
+console.log(tambah, kurang, kali, bagi);
+
+//* Contoh 2 arguments
+const mhs1 = {
+  nama: 'Rama',
+  umur: 30,
+  email: 'Rama@Ramset.co.id',
+  nilai: {
+    tugas: 80,
+    uts: 85,
+    uas: 85,
+  },
+};
+function cetakMhs({ nama, umur, nilai: { tugas, uts, uas } }) {
+  return `Halo, nama saya ${nama}, berumur ${umur} tahun & nilai-nilai saya adalah ${tugas}, ${uts}, ${uas}.`;
+}
+console.log(cetakMhs(mhs1));
