@@ -896,3 +896,76 @@ function cetakMhs({ nama, umur, nilai: { tugas, uts, uas } }) {
   return `Halo, nama saya ${nama}, berumur ${umur} tahun & nilai-nilai saya adalah ${tugas}, ${uts}, ${uas}.`;
 }
 console.log(cetakMhs(mhs1));
+
+//* Spread Operator
+//* Contoh 1 Array
+const mhs = ['Rama', 'Dyan', 'Setia', 'Awan'];
+console.log(...mhs);
+console.log(...mhs[0]);
+//* Contoh 2 Menggabungkan Array
+const mhs = ['Rama', 'Dyan'];
+const dosen = ['Setia', 'Awan'];
+const orang = [...mhs, 'Ramset', ...dosen];
+console.log(...orang);
+//* Contoh 3 Mengcopy Array
+const mhs = ['Rama', 'Dyan', 'Setia', 'Awan'];
+const mhs1 = [...mhs];
+mhs1[0] = 'Ramset';
+console.log(mhs);
+console.log(mhs1);
+//* Contoh 4 Mengcopy Array DOM
+const liMhs = document.querySelectorAll('li');
+// const mhs = [];
+// for (let i = 0; i < liMhs.length; i++) {
+//   mhs.push(liMhs[i].textContent);
+// }
+// console.log(mhs);
+const mhs = [...liMhs].map((m) => m.textContent);
+console.log(mhs);
+//* Contoh 5 Array String DOM
+const nama = document.querySelector('.nama');
+const huruf = [...nama.textContent].map((h) => `<span>${h}</span>`).join('');
+nama.innerHTML = huruf;
+
+//* Rest Parameter
+//* Contoh 1 Array
+function myFunc(...value) {
+  return value;
+}
+console.log(myFunc(1, 2, 3, 4, 5));
+//* Contoh 2 Menjumlahkan Array
+function jumlah(...angka) {
+  let total = 0;
+  for (const a of angka) {
+    total += a;
+  }
+  return total;
+  // return angka.reduce((a,b) => a + b);
+}
+console.log(jumlah(1, 2, 3, 4, 5));
+//* Contoh 3 Destructuring Array
+const kel1 = ['Rama', 'Dyan', 'Setia', 'Awan'];
+const [ketua, wakil, ...anggota] = kel1;
+console.log(ketua);
+console.log(wakil);
+console.log(anggota);
+//* Contoh 4 Destructuring Object
+const team = {
+  pm: 'Rama',
+  fe1: 'Dyan',
+  fe2: 'Setia',
+  be: 'Awan',
+  ux: 'Ramset',
+  do: 'Setram',
+};
+const { pm, ...myTeam } = team;
+console.log(pm);
+console.log(myTeam);
+
+//* Contoh 5 Filtering
+function filterBy(type, ...values) {
+  return values.filter((v) => typeof v === type);
+}
+console.log(filterBy('number', 1, 2, 'Rama', false, 10, true, 'Dyan'));
+console.log(filterBy('string', 1, 2, 'Rama', false, 10, true, 'Dyan'));
+console.log(filterBy('boolean', 1, 2, 'Rama', false, 10, true, 'Dyan'));

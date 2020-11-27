@@ -388,6 +388,12 @@ Expression pada JS yg membuat kita dapat membongkar nilai dr array / properti dr
 
 # Spread Operator
 
+Operator yang memecah iterables menjadi single element.
+
+# Rest Parameter
+
+Merepresentasikan argument pd function dgn jumalh tak terbatas menjadi sebuah array.
+
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
 Manfaat DOM:
