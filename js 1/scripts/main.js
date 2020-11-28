@@ -9,8 +9,8 @@ uniCode = '\u00AE';
 uniCode = '\u00B1';
 console.log(uniCode);
 
-let x; // * deklarasi & inisialisasi
-x = 20; // * penugasan
+let x; //* deklarasi & inisialisasi
+x = 20; //* penugasan
 
 // * Popup Box
 const nama = prompt('masukkan nama:');
@@ -23,7 +23,7 @@ if (tes === true) {
 }
 
 // * Looping
-// * while
+//* while
 let ulang = true;
 while (ulang) {
   console.log('hello world');
@@ -36,12 +36,12 @@ while (nilaiAwal <= 10) {
   nilaiAwal++;
 }
 
-// * for
+//* for
 for (let nilaiAwal = 1; nilaiAwal <= 10; nilaiAwal++) {
   console.log(`hello world ${nilaiAwal} x`);
 }
 
-// * for of
+//* for of
 //* Contoh 1 Array
 const mhs = ['Rama', 'Diyan', 'Setia', 'Awan'];
 // for (let i = 0; i < mhs.length; i++) {
@@ -52,13 +52,11 @@ const mhs = ['Rama', 'Diyan', 'Setia', 'Awan'];
 for (const m of mhs) {
   console.log(m);
 }
-
 //* Contoh 2 String
 const nama = 'Rama';
 for (const n of nama) {
   console.log(n);
 }
-
 //* Contoh 3 Swap for of dgn forEach
 const mhs = ['Rama', 'Diyan', 'Setia', 'Awan'];
 // mhs.forEach((m, i) => {
@@ -67,14 +65,12 @@ const mhs = ['Rama', 'Diyan', 'Setia', 'Awan'];
 for (const [i, m] of mhs.entries()) {
   console.log(`${m} adalah mahasiswa ke-${i + 1}`);
 }
-
 //* Contoh 4 Nodelist
 const liNama = document.querySelectorAll('nama');
 // liNama.forEach((n) => console.log(n.textContent));
 for (n of liNama) {
   console.log(n.innerHTML);
 }
-
 //* Contoh 5 Arguments
 function jumlahAngka() {
   let jumlah = 0;
@@ -85,7 +81,7 @@ function jumlahAngka() {
 }
 console.log(jumlahAngka(1, 2, 3, 4, 5));
 
-// * for in
+//* for in
 //* Contoh 1
 const mhs = {
   nama: 'Rama',
@@ -97,13 +93,13 @@ for (m in mhs) {
 }
 
 // * Selection
-// * if
+//* if
 let angka = 3;
 if (angka <= 5) {
   console.log(`${angka} kurang dari 5`);
 }
 
-// * if else
+//* if else
 let angka = 5;
 if (angka % 2 == 0) {
   console.log(`${angka} adalah bilangan GENAP`);
@@ -111,7 +107,7 @@ if (angka % 2 == 0) {
   console.log(`${angka} adalah bilangan GANJIL`);
 }
 
-// * else if
+//* else if
 let angka = 5;
 if (angka % 2 === 0) {
   console.log(`${angka} adalah bilangan GENAP`);
@@ -121,7 +117,8 @@ if (angka % 2 === 0) {
   console.log('Yang anda masukkan bukan angka!');
 }
 
-// * switch
+//* switch
+//* Contoh 1
 let angka = 1;
 switch (angka) {
   case 1:
@@ -137,7 +134,7 @@ switch (angka) {
     console.log('Angka yang anda masukkan salah!');
     break;
 }
-
+//* Contoh 2
 let item = 'nasi';
 switch (item) {
   case 'nasi':
@@ -155,7 +152,7 @@ switch (item) {
 }
 
 // * Nesting Loop & Selection
-// ! Segitiga
+//* Contoh 1 Segitiga
 let str = '';
 for (let i = 0; i < 10; i++) {
   for (let j = 0; j <= i; j++) {
@@ -164,8 +161,7 @@ for (let i = 0; i < 10; i++) {
   str += '\n';
 }
 console.log(str);
-
-// ! Segitiga Terbalik
+//* Contoh 2 Segitiga Terbalik
 let stri = '';
 for (let i = 10; i > 0; i--) {
   for (let j = 0; j < i; j++) {
@@ -185,11 +181,10 @@ function jumlahVolumeDuaKubus(a, b) {
 console.log(jumlahVolumeDuaKubus(8, 3));
 console.log(jumlahVolumeDuaKubus(15, 4));
 
-// * Parameter & Argument
+//* Parameter & Argument
 function tambah(a, b) /* Parameter */ {
   return a + b;
 }
-
 function kali(a, b) /* Parameter */ {
   return a * b;
 }
@@ -209,7 +204,6 @@ console.log(coba);
 
 //* Scope
 let a = 1; // Global Scope
-
 function tes() {
   let b = 2; // Function Scope
   console.log(b);
@@ -232,12 +226,13 @@ function faktorial(n) {
 console.log(faktorial(5));
 
 //* Array
+//* Contoh 1
 let binatang = [];
 binatang = ['kucing', 'sapi', 'monyet', 'panda', 'koala', 'kelinci'];
 console.log(binatang[3]);
 console.log(typeof binatang);
 console.log(binatang.length);
-
+//* Contoh 2
 let myArray = ['bakso', binatang, 1, 2, false, [4, 5, 6]];
 console.log(myArray[1]);
 console.log(typeof myArray);
@@ -257,46 +252,47 @@ arr.shift();
 console.log(arr.length);
 console.log(arr.join(' - '));
 
-//* slice & splice
+//* splice
 let arr = ['rama', 'diyan', 'awan', 'ramset'];
 arr.splice(2, 1, 'setia', 'wan');
 console.log(arr.join(' - '));
-
+//* Slice
 let arr2 = arr.slice(2, 4);
 console.log(arr2.join(' - '));
 
 //* forEach
+//* Contoh 1
 let angka = [1, 2, 3, 4, 5, 6, 7, 8];
 angka.forEach(function (e) {
   console.log(e);
 });
-
+//* Contoh 2
 let angka = [1, 2, 3, 4, 5, 6, 7, 8];
 let nama = ['rama', 'diyan', 'setia', 'awan'];
 nama.forEach(function (nama, angka) {
   console.log(`Mahasiswa ke-${angka + 1} adalah: ${nama}.`);
 });
 
-//* map
+//* Map
 let angka = [1, 2, 3, 4, 5, 6, 7, 8];
 let arrAngka = angka.map(function (e) {
   return e * 2;
 });
 console.log(arrAngka.join(' - '));
 
-//* sort
+//* Sort
 let angka = [1, 3, 9, 2, 6, 5, 8, 0, 4, 7];
 angka.sort();
 console.log(angka.join(' , '));
 
-//* find
+//* Find
 let angka = [1, 3, 9, 2, 6, 5, 8, 0, 4, 7];
 let arrAngka = angka.find(function (x) {
   return x > 5;
 });
 console.log(arrAngka);
 
-//* filter
+//* Filter
 let angka = [1, 3, 9, 2, 6, 5, 8, 0, 4, 7];
 let arrAngka = angka.filter(function (y) {
   return y > 5;
@@ -326,7 +322,6 @@ let mahasiswa = {
 };
 console.log(mahasiswa.ipSemester[2]);
 console.log(mahasiswa.ipKumulatif());
-
 //* Contoh 2
 let mhs = {
   nama: 'Rama',
@@ -351,7 +346,6 @@ function buatMahasiswa(namaDepan, namaBelakang, umur, alamat) {
 }
 let mahasiswa1 = buatMahasiswa('rama', 'setia', '26', 'jl. kincir 3');
 console.log(mahasiswa1);
-
 //* Contoh 2
 const methodMhs = {
   makan: function (porsi) {
@@ -394,7 +388,6 @@ function Mahasiswa(namaDepan, namaBelakang, umur, alamat) {
 }
 let mahasiswa2 = new Mahasiswa('diyan', 'setia', '20', 'jl. kincir 1');
 console.log(mahasiswa2);
-
 //* Contoh 2
 const methodMhs = {
   makan: function (porsi) {
@@ -528,7 +521,6 @@ function init() {
 let panggilNama = init();
 panggilNama('Rama');
 panggilNama('Dyan');
-
 //* Contoh 2
 function ucapkanSalam(waktu) {
   return function (nama) {
@@ -541,7 +533,6 @@ let selamatMalam = ucapkanSalam('malam');
 
 selamatPagi('Rama');
 selamatMalam('Dyan');
-
 //* Contoh 3
 let add = (function () {
   let counter = 0;
@@ -557,19 +548,16 @@ console.log(add());
 //* Contoh 1
 const haloDunia = () => 'Hello World';
 console.log(haloDunia());
-
 //* Contoh 2 function expression vs arrow function
 // const tampilNama = function (nama, waktu) {
 //   return `selamat ${waktu}, ${nama}.`;
 // };
 const tampilNama = (nama, waktu) => `selamat ${waktu}, ${nama}`;
 console.log(tampilNama('Rama', 'Pagi'));
-
 //* Contoh 3
 let maha = ['Rama', 'Dyan', 'Setia', 'Awan'];
 let jumlahHuruf = maha.map((nama) => nama.length);
 console.log(jumlahHuruf);
-
 //* Contoh 4
 let jumlahHurufnya = maha.map((nama) => ({
   nama,
@@ -591,7 +579,6 @@ const Mahasiswa = function () {
   }, 500);
 };
 const ramadyan = new Mahasiswa();
-
 //* Contoh 2 arrow function pada DOM
 const box = document.querySelector('box');
 box.addEventListener('click', function () {
@@ -616,7 +603,6 @@ while (count <= 10) {
   count++;
 }
 console.log(total);
-
 //* Contoh 2
 // for (let i = 0; i < 10; i++) {
 //   console.log(i);
@@ -629,7 +615,6 @@ function repeatLog(n) {
 repeatLog(1);
 repeatLog(10);
 repeatLog(100);
-
 //* Contoh 3
 const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
@@ -666,7 +651,6 @@ const hasil = angka
 console.log(hasil);
 
 //* Template Literal
-
 //* HTML Fragments
 //* Contoh 1
 const mhs = {
@@ -680,7 +664,6 @@ const el = `<div class="mhs">
   <span class="nrp>${mhs.nrp}</span>
 </div>`;
 console.log(el);
-
 //* Contoh 2 Looping
 const mhs = [
   {
@@ -708,7 +691,6 @@ const el = `<div class="mhs">
 </div>`;
 // console.log(el);
 document.body.innerHTML = el;
-
 //* Contoh 3 Conditional
 const lagu = {
   judul: 'Kau Adalah',
@@ -723,7 +705,6 @@ const el = `<div class="lagu">
 </div>`;
 // console.log(el);
 document.body.innerHTML = el;
-
 //* Contoh 4 Nested
 const mhs = {
   nama: 'Rama',
@@ -778,7 +759,6 @@ function coba(strings, ...values) /* ... itu rest parameter */ {
 const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun.`;
 // console.log(str);
 document.body.innerHTML = str;
-
 //* Contoh 2
 const nama = 'Rama';
 const umur = 20;
@@ -880,7 +860,6 @@ function kalkulasi(a, b) {
 }
 const { kurang, bagi, kali, tambah } = kalkulasi(2, 3);
 console.log(tambah, kurang, kali, bagi);
-
 //* Function Contoh 2 arguments
 const mhs1 = {
   nama: 'Rama',
