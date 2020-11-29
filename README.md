@@ -394,7 +394,16 @@ Operator yang memecah iterables menjadi single element.
 
 Merepresentasikan argument pd function dgn jumalh tak terbatas menjadi sebuah array.
 
-# ASYNCHRONOUS JS
+# SYNCHRONOUS vs ASYNCHRONOUS
+
+- SINGLE-THREAD vs Multi-thread
+  Lingkungan eksekusi task
+- Blocking vs NON-BLOCKING
+  Teknik ngoding (Input-Output related)
+- Synchronous vs ASYNCHRONOUS
+  Teknik ngoding (HTTP Request related)
+- CONCURRENT vs Parallel
+  Lingkungan eksekusi task (infra, hardware & virtualization related)
 
 # Callback
 
