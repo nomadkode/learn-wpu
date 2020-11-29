@@ -394,6 +394,16 @@ Operator yang memecah iterables menjadi single element.
 
 Merepresentasikan argument pd function dgn jumalh tak terbatas menjadi sebuah array.
 
+# ASYNCHRONOUS JS
+
+# Callback
+
+# Promise
+
+# AJAX
+
+# Async & Await
+
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
 Manfaat DOM:
