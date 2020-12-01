@@ -948,3 +948,53 @@ function filterBy(type, ...values) {
 console.log(filterBy('number', 1, 2, 'Rama', false, 10, true, 'Dyan'));
 console.log(filterBy('string', 1, 2, 'Rama', false, 10, true, 'Dyan'));
 console.log(filterBy('boolean', 1, 2, 'Rama', false, 10, true, 'Dyan'));
+
+//* Callback
+//* Contoh Sync Callback 1
+function tampilPesan(callback) {
+  const nama = 'rama';
+  callback(nama);
+}
+tampilPesan((nama) => {
+  console.log(`Halo, ${nama}`);
+});
+
+//* Contoh Sync Callback 2
+const mhs = [
+  {
+    id: 1,
+    nama: 'Rama',
+    nim: '0001',
+    email: 'rama@ramset.com',
+    Jurusan: 'IT',
+  },
+  {
+    id: 2,
+    nama: 'Dyan',
+    nim: '0002',
+    email: 'dyan@ramset.com',
+    Jurusan: 'IT',
+  },
+  {
+    id: 3,
+    nama: 'Setia',
+    nim: '0003',
+    email: 'setia@ramset.com',
+    Jurusan: 'IT',
+  },
+  {
+    id: 4,
+    nama: 'Awan',
+    nim: '0004',
+    email: 'awan@ramset.com',
+    Jurusan: 'IT',
+  },
+];
+console.log('mulai');
+mhs.forEach((m) => {
+  for (let i = 0; i < 1000000; i++) {
+    let date = new Date();
+  }
+  console.log(m.nama);
+});
+console.log('selesai');

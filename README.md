@@ -343,7 +343,7 @@ Implementasi:
 # HIGHER ORDER FUNCTION
 
 Function yg beroperasi pada function lain (di dalam argument / return value). Javascript memperlakukan function sbg object.
-Why: Abstraksi, yaitu untuk menyederhanakan suatu program karena semakin besar sebuah program, semakin tinggi kompleksitasnya, semakin membingungkan programmer.
+Why: Abstraksi, yaitu untuk menyederhanakan suatu program karena semakin besar sebuah program, semakin tinggi kompleksitasnya, maka semakin membingungkan programmer.
 
 - Array.prototype.map()
 - Array.prototype.filter()
@@ -406,6 +406,8 @@ Merepresentasikan argument pd function dgn jumalh tak terbatas menjadi sebuah ar
   Lingkungan eksekusi task (infra, hardware & virtualization related)
 
 # Callback
+
+Function yg dikirimkan sbg parameter pada function yg lain.
 
 # Promise
 
