@@ -964,28 +964,28 @@ const mhs = [
   {
     id: 1,
     nama: 'Rama',
-    nim: '0001',
+    nim: '0101',
     email: 'rama@ramset.com',
     Jurusan: 'IT',
   },
   {
-    id: 2,
+    id: 1,
     nama: 'Dyan',
-    nim: '0002',
+    nim: '0202',
     email: 'dyan@ramset.com',
     Jurusan: 'IT',
   },
   {
-    id: 3,
+    id: 2,
     nama: 'Setia',
-    nim: '0003',
+    nim: '0303',
     email: 'setia@ramset.com',
     Jurusan: 'IT',
   },
   {
-    id: 4,
+    id: 2,
     nama: 'Awan',
-    nim: '0004',
+    nim: '0404',
     email: 'awan@ramset.com',
     Jurusan: 'IT',
   },
@@ -998,3 +998,32 @@ mhs.forEach((m) => {
   console.log(m.nama);
 });
 console.log('selesai');
+
+//* Contoh 1 Async Callback
+function getDataMhs(url, success, error) {
+  let xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        success(xhr.response);
+      } else if (xhr.status === 404) {
+        error();
+      }
+    }
+  };
+
+  xhr.open('get', url);
+  xhr.send();
+}
+
+getDataMhs(
+  'data/mahasiswa.json',
+  (results) => {
+    const mhs = JSON.parse(results);
+    mhs.forEach((m) => console.log(m.nama));
+  },
+  (e) => {
+    console.log(e.responseText);
+  }
+);
