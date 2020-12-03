@@ -409,13 +409,35 @@ Merepresentasikan argument pd function dgn jumalh tak terbatas menjadi sebuah ar
 
 Function yg dikirimkan sbg parameter pada function yg lain.
 
+Contoh:
+function namaFunction(namaCallback) {
+deklarasi namaVar = value;
+callback(namaVar);
+}
+namaFunction((namaVar) => {
+console.log(execution);
+});
+
 # Promise
 
 Object yg merepresentasikan keberhasilan / kegagalan sebuah event yg async di masa yg akan datang.
 Promise (fulfilled / rejected / pending).
 Menggunakan callback => Action (resolve => then / reject => catch / finally).
 
-# AJAX
+Contoh:
+deklarasi namaVar1 = value;
+const namaVar2 = new Promise((resolve, reject) => {
+if (namaVar1) {
+resolve(value);
+} else {
+reject(value);
+}
+});
+namaVar2
+.then((response) => console.log(execution))
+.catch((response) => console.log(execution));
+
+# AJAX & Fetch
 
 # Async & Await
 
