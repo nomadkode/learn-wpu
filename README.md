@@ -422,7 +422,7 @@ console.log(execution);
 
 Object yg merepresentasikan keberhasilan / kegagalan sebuah event yg async di masa yg akan datang.
 Promise (fulfilled / rejected / pending).
-Menggunakan callback => Action (resolve => then / reject => catch / finally).
+Menggunakan callback => Action (resolve => then / reject => catch / pending => finally).
 
 Contoh:
 deklarasi namaVar1 = value;
@@ -438,6 +438,12 @@ namaVar2
 .catch((response) => console.log(execution));
 
 # AJAX & Fetch
+
+Fetch adalah sebuah method pada API JS utk mengambil resources dr jaringan & mengembalikan promise yg selesai(fullfilled) ketika ada response yg tersedia.
+notasi: fetch(resources, init);
+
+- Resources: url / request object (representasi permintaan sumber).
+- Init: konfigurasi tambahan pd sebuah request berbentuk object (contoh: get, post, method, header, cache, dll)
 
 # Async & Await
 
