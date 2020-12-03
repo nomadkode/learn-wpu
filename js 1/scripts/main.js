@@ -1051,6 +1051,7 @@ fetch('http://www.omdbapi.com/?apikey=c209bec7&s=avengers')
 //* Promise
 //* Contoh 1 Promise Sync
 let ditepati = true;
+// let ditepati = false;
 const janjiSatu = new Promise((resolve, reject) => {
   if (ditepati) {
     resolve('Janji telah ditepati!');
@@ -1061,8 +1062,10 @@ const janjiSatu = new Promise((resolve, reject) => {
 janjiSatu
   .then((response) => console.log('Okay : ' + response))
   .catch((response) => console.log('Not Okay! : ' + response));
+
 //* Contoh 2 Promise Async
 let ditepati = true;
+// let ditepati = false;
 const janjiDua = new Promise((resolve, reject) => {
   if (ditepati) {
     setTimeout(() => {
@@ -1070,7 +1073,7 @@ const janjiDua = new Promise((resolve, reject) => {
     }, 2000);
   } else {
     setTimeout(() => {
-      resolve('Tidak ditepati setelah beberapa detik!');
+      reject('Tidak ditepati setelah beberapa detik!');
     }, 2000);
   }
 });
@@ -1083,3 +1086,34 @@ janjiDua
 console.log('selesai');
 
 //* Contoh 3 Promise.all()
+let ditepati = true;
+const film = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve([
+      {
+        judul: 'The Avengers',
+        sutradara: 'Ramset',
+        pemeran: 'Rama, Dyan, Setia, Awan',
+      },
+    ]);
+  }, 1000);
+});
+const cuaca = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve([
+      {
+        kota: 'Jakarta',
+        temp: 30,
+        kondisi: 'Cerah Berawan',
+      },
+    ]);
+  }, 500);
+});
+
+// film.then((response) => console.log(response));
+// cuaca.then((response) => console.log(response));
+Promise.all([film, cuaca]).then((response) => {
+  const [film, cuaca] = response;
+  console.log(film);
+  console.log(cuaca);
+});
