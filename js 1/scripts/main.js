@@ -1027,3 +1027,25 @@ getDataMhs(
     console.log(e.responseText);
   }
 );
+
+//* Callback
+//* Ajax
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function () {
+  if (xhr.status === 200) {
+    if (xhr.readyState === 4) {
+      console.log(JSON.parse(xhr.response));
+    }
+  } else {
+    console.log(xhr.responseText);
+  }
+};
+xhr.open('get', 'http://www.omdbapi.com/?apikey=c209bec7&s=avengers');
+xhr.send();
+
+//* Fetch
+fetch('http://www.omdbapi.com/?apikey=c209bec7&s=avengers')
+  .then((response) => response.json())
+  .the((response) => console.log(response));
+
+//* Promise
