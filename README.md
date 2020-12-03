@@ -411,6 +411,10 @@ Function yg dikirimkan sbg parameter pada function yg lain.
 
 # Promise
 
+Object yg merepresentasikan keberhasilan / kegagalan sebuah event yg async di masa yg akan datang.
+Promise (fulfilled / rejected / pending).
+Menggunakan callback => Action (resolve => then / reject => catch / finally).
+
 # AJAX
 
 # Async & Await

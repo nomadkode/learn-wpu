@@ -1049,3 +1049,37 @@ fetch('http://www.omdbapi.com/?apikey=c209bec7&s=avengers')
   .the((response) => console.log(response));
 
 //* Promise
+//* Contoh 1 Promise Sync
+let ditepati = true;
+const janjiSatu = new Promise((resolve, reject) => {
+  if (ditepati) {
+    resolve('Janji telah ditepati!');
+  } else {
+    reject('Ingkar janji..');
+  }
+});
+janjiSatu
+  .then((response) => console.log('Okay : ' + response))
+  .catch((response) => console.log('Not Okay! : ' + response));
+//* Contoh 2 Promise Async
+let ditepati = true;
+const janjiDua = new Promise((resolve, reject) => {
+  if (ditepati) {
+    setTimeout(() => {
+      resolve('Ditepati setelah beberapa detik!');
+    }, 2000);
+  } else {
+    setTimeout(() => {
+      resolve('Tidak ditepati setelah beberapa detik!');
+    }, 2000);
+  }
+});
+console.log('mulai');
+// console.log(janjiDua.then(() => console.log(janjiDua)));
+janjiDua
+  .finally(() => console.log('selesai menunggu!'))
+  .then((response) => console.log('Okay : ' + response))
+  .catch((response) => console.log('Not Okay! : ' + response));
+console.log('selesai');
+
+//* Contoh 3 Promise.all()
