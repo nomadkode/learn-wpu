@@ -1118,7 +1118,7 @@ fetch('http://www.omdbapi.com/?apikey=c209bec7&s=avengers')
   .then((response) => console.log(response));
 
 //* Async Await
-//* Contoh 1
+//* Contoh
 // Promise Synchronous
 // const coba = new Promise((resolve) => {
 //   setTimeout(() => {
@@ -1128,7 +1128,7 @@ fetch('http://www.omdbapi.com/?apikey=c209bec7&s=avengers')
 // coba.then(() => console.log(coba));
 function cobaPromise() {
   return new Promise((resolve, reject) => {
-    const waktu = 5000;
+    const waktu = 3000;
     if (waktu < 5000) {
       setTimeout(() => {
         resolve('selesai');
@@ -1138,17 +1138,17 @@ function cobaPromise() {
     }
   });
 }
+// Error Handling Promise
 // const coba = cobaPromise();
-// coba
-// .then(() => console.log(coba))
-// .catch(() => console.log(coba));
+// coba.then(() => console.log(coba)).catch((err) => console.error(err));
 
+// Error Handling Async Await
 async function cobaAsync() {
   try {
     const coba = await cobaPromise();
     console.log(coba);
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
   }
 }
 cobaAsync();
