@@ -448,6 +448,12 @@ notasi: fetch(resources, init);
 
 # Async & Await
 
+- Sebuah function yg bekerja secara asynchronous ( melalui event loop),
+- yang menghasilkan (implisit) promise sbg return value,
+- tapi cara penulisan kode menggunakan penulisan yg synchronous (standard).
+
+Sebuah async function dapat punya keyword await di dalamnya untuk memberhentikan sementara eksekusi fungsinya sambil menunggu promise nya selesai (resolve).
+
 # DOM (Document Object Model): Representasi elemen HTML pada dokumen menjadi sebuah object. Tersimpan ke dalam DOM Tree.
 
 Manfaat DOM:

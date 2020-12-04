@@ -1116,3 +1116,39 @@ xhr.send();
 fetch('http://www.omdbapi.com/?apikey=c209bec7&s=avengers')
   .then((response) => response.json())
   .then((response) => console.log(response));
+
+//* Async Await
+//* Contoh 1
+// Promise Synchronous
+// const coba = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve('selesai');
+//   }, 2000);
+// });
+// coba.then(() => console.log(coba));
+function cobaPromise() {
+  return new Promise((resolve, reject) => {
+    const waktu = 5000;
+    if (waktu < 5000) {
+      setTimeout(() => {
+        resolve('selesai');
+      }, waktu);
+    } else {
+      reject('kelamaan!');
+    }
+  });
+}
+// const coba = cobaPromise();
+// coba
+// .then(() => console.log(coba))
+// .catch(() => console.log(coba));
+
+async function cobaAsync() {
+  try {
+    const coba = await cobaPromise();
+    console.log(coba);
+  } catch (error) {
+    console.log(error);
+  }
+}
+cobaAsync();
