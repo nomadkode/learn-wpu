@@ -444,6 +444,7 @@ notasi: fetch(resources, init);
 
 - Resources: url / request object (representasi permintaan sumber).
 - Init: konfigurasi tambahan pd sebuah request berbentuk object (contoh: get, post, method, header, cache, dll)
+- Response: Hasil dr fetch berupa promise (property & method).
 
 # Async & Await
 
