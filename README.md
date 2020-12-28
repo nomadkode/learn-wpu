@@ -1,4 +1,5 @@
 # JScheatsheet
+sumber lebih lanjut: https://developer.mozilla.org/id/docs/Web/JavaScript/A_re-introduction_to_JavaScript
 
 # TIPE DATA
 
